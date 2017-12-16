@@ -1,4 +1,4 @@
-package xml.domain.questionnaire;
+package xml.source.questionnaire;
 
 import java.util.List;
 

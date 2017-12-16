@@ -1,4 +1,4 @@
-package xml.domain.questionnaire;
+package xml.dest.questionnaire;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 
@@ -7,7 +7,7 @@ public class Score {
 	
 	private String value;
 	
-	private String content;
+	private String label;
 
 	public String getValue() {
 		return value;
@@ -17,13 +17,15 @@ public class Score {
 		this.value = value;
 	}
 
-	public String getContent() {
-		return content;
+	public String getLabel() {
+		return label;
 	}
 
-	public void setContent(String content) {
-		this.content = content;
+	public void setLabel(String label) {
+		this.label = label;
 	}
+
+
 	
 	
 	

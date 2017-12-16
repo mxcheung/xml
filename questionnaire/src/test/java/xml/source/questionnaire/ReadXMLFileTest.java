@@ -1,4 +1,4 @@
-package xml.domain.questionnaire;
+package xml.source.questionnaire;
 
 import java.io.File;
 import java.io.IOException;
@@ -13,6 +13,8 @@ import org.xml.sax.SAXException;
 
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
+
+import xml.source.questionnaire.Root;
 
 public class ReadXMLFileTest {
 

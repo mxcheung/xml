@@ -1,8 +1,4 @@
-package xml.domain.questionnaire;
-
-import java.util.List;
-
-
+package xml.source.questionnaire;
 
 public class Root {
 	
