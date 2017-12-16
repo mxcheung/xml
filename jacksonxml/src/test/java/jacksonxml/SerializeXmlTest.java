@@ -13,7 +13,11 @@ import java.io.InputStreamReader;
 import org.junit.Test;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.dataformat.xml.JacksonXmlModule;
 import com.fasterxml.jackson.dataformat.xml.XmlMapper;
+
+
 
 public class SerializeXmlTest {
 
@@ -26,9 +30,12 @@ public class SerializeXmlTest {
 	
 	@Test
 	public void whenJavaGotFromXmlStr_thenCorrect() throws IOException {
-	    XmlMapper xmlMapper = new XmlMapper();
+	 
+	    JacksonXmlModule xmlModule = new JacksonXmlModule();
+	    xmlModule.setDefaultUseWrapper(false);
+	    ObjectMapper objectMapper = new XmlMapper(xmlModule);
 	    SimpleBean value = 
-	      xmlMapper.readValue("<SimpleBean><x>1</x><y>2</y></SimpleBean>", SimpleBean.class);
+	    		objectMapper.readValue("<SimpleBean><x>1</x><y>2</y></SimpleBean>", SimpleBean.class);
 	    assertTrue(value.getX() == 1 && value.getY() == 2);
 	}
 	
@@ -36,9 +43,12 @@ public class SerializeXmlTest {
 	@Test
 	public void whenJavaGotFromXmlFile_thenCorrect() throws IOException {
 	    File file = new File("src\\test\\simple_bean.xml");
-	    XmlMapper xmlMapper = new XmlMapper();
+	    JacksonXmlModule xmlModule = new JacksonXmlModule();
+	    xmlModule.setDefaultUseWrapper(false);
+	    ObjectMapper objectMapper = new XmlMapper(xmlModule);
+
 	    String xml = inputStreamToString(new FileInputStream(file));
-	    SimpleBean value = xmlMapper.readValue(xml, SimpleBean.class);
+	    SimpleBean value = objectMapper.readValue(xml, SimpleBean.class);
 	    assertTrue(value.getX() == 1 && value.getY() == 2);
 	}
 	

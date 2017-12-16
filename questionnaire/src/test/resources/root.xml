@@ -1,0 +1,438 @@
+<?xml version="1.0"?>
+<xml>
+<label>Member Communications</label>
+		<section>
+			<label>Member Communications</label>
+			
+
+			<question id="admin_member_statement" prev="admin_member_statement" option-list="time frequency">
+				How often are member statements provided to members each year?
+				<score value="monthly">4</score>
+				<score value="quarterly">4</score>
+				<score value="half_yearly">2</score>
+				<score value="annual">0</score>
+			</question>
+			<question id="admin_statement_deliv" prev="admin_statement_deliv" type="multioption">
+				How are statements delivered?
+				<option value="printed">Printed letter</option>
+				<option value="email">Email</option>
+				<score value="email">0.5</score>
+			</question>
+			<question id="admin_statement_electronic" prev="admin_statement_electronic" type="percentage">
+				What percentage of your most recent member statements were communicated electronically?
+			</question>
+			<question id="admin_statement_projection_prev" prev="admin_statement_projection_prev" option-list="Yes/No">
+				For your most recent Member Statements, was a retirement income projection provided to members?
+				<score value="yes">1</score>
+			</question>
+			<question id="admin_statement_projection_fut" prev="admin_statement_projection_fut" option-list="Yes/No">
+				For your June year; Member Statements, will a retirement income projection be provided to members?
+				<score value="yes">2</score>
+			</question>
+			<question id="ability_receive_video_statement" prev="ability_receive_video_statement" option-list="Yes/No">
+				Do you provide members with the ability to receive a personal video statement?
+			</question>
+			<question id="registered_members_period" prev="registered_members_period" type="number">
+				How many members are registered or expected to receive these for the June year; statement period?
+			</question>
+
+<!-- 			<question id="admin_record_contri" prev="admin_record_contri" option-list="0-4">How many of these are records of contributions only?</question> -->
+<!--			<question id="admin_contri_receipt_freq" prev="admin_record_contri" option-list="0-4">
+				How often do you provide members with a receipt of contribution statement each year?
+					
+				<option value="0">Never</option>
+				<option value="1">Once</option>
+			</question>-->
+			<question id="admin_contri_receipt" prev="admin_contri_receipt" type="multioption">
+				Do you provide members with a receipt of individual contributions for:
+				<option value="sg">SG Contributions</option>
+				<option value="rollovers">Rollovers</option>
+				<option value="personal">Personal Contributions</option>
+				<option value="none">None of the above</option>
+				
+				<score value="sg">0.5</score>
+				<score value="rollovers">0.5</score>
+				<score value="personal">0.5</score>
+			</question>
+			<group>
+				<rule>admin_contri_receipt!='none'</rule>
+				<question id="admin_contri_receipt_com" prev="admin_contri_receipt_com" type="multioption">
+					How is the receipt communicated?
+					<option value="letter">Printed letter</option>
+					<option value="email">Email</option>
+					<option value="sms">SMS</option>
+					<option value="other">Other</option>
+					<score value="email">0.5</score>
+					<score value="sms">1</score>
+				</question>
+				<group>
+					<rule>admin_contri_receipt_com~~'other'</rule>
+					<question id="admin_contri_receipt_com_other" prev="admin_contri_receipt_com_other" type="text">If other, please specify</question>
+				</group>
+			</group>
+			<question id="admin_member_mobile" prev="admin_member_mobile" type="percentage">
+				What percentage of members does the fund have mobile phone numbers for?
+			</question>
+			<question id="admin_member_email" prev="admin_member_email" type="percentage">
+				What percentage of members does the fund have an email address for?
+			</question>
+			<question id="admin_member_email_enquiries" type="text">
+				Please approximate the total number of email enquiries received for the past 12 months to 30 June year;.
+			</question>
+			<question id="admin_member_web_enquiries" type="text">
+				Please approximate the total number of web enquiries received for the past 12 months to 30 June year;.
+			</question>
+			<question id="admin_member_written_enquiries" type="text">
+				Please approximate the total number of written enquiries received for the past 12 months to 30 June year;.				
+			</question>
+
+
+		</section>	
+		<section>
+			<label>Marketing and Corporate Communications</label>
+			<group id="market" type="option">
+				<question id="mkt_spend" prev="mkt_spend">
+					What was your marketing spend in the year2;-year; financial year?
+					<option value="no_buget">$0 or no budget</option>
+					<option value="less_100k">Less than $100,000</option>
+					<option value="100k_500k">$100,001 - $500,000</option>
+					<option value="500k_1m">$500,001 - $999,999</option>
+					<option value="1m-2m">$1 - $2 million</option>
+					<option value="2m-3m">$2 - $3 million</option>
+					<option value="3m-4m">$3 - $4 million</option>
+					<option value="4m-5m">$4 - $5 million</option>
+					<option value="more_5m">Above $5 million</option>
+				</question>
+				<question id="mkt_team" prev="mkt_team" option-list="Yes/No">
+					Do you have an internal marketing team?
+				</question>
+				<group>
+					<rule>mkt_team=='Yes'</rule>
+					<question id="mkt_team_size" prev="mkt_team_size">
+						How large is the team?
+						<option value="10_more">10 or more</option>
+						<option value="5_to_9">5 to 9</option>
+						<option value="2_to_4">2 to 4</option>
+						<option value="1">1</option>
+					</question>
+				</group>
+				<question id="mkt_communication" prev="mkt_communication" type="multioption">
+					Do you use any of the following communication methods to target current and potential members?
+					<option value="tvad">TV Advertising</option>
+					<option value="rdad">Radio Advertising</option>
+					<option value="news">Newspaper/Magazine Advertising</option>
+					<option value="mail">Direct Mail</option>
+					<option value="online">Online</option>
+					<option value="sponsorship">Sponsorship</option>
+					<option value="social">Social Networking Sites</option>
+					<option value="sms">SMS</option>
+					<option value="blog">Blogging</option>
+				</question>
+				<group>
+					<rule>mkt_communication~~'social'</rule>
+					<question id="mkt_communication_social" prev="mkt_communication_social" type="multioption">
+						What social networking sites are used?
+						<option value="facebook">Facebook</option>
+						<option value="twitter">Twitter</option>
+						<option value="linkedin">LinkedIn</option>
+						<option value="googleplus">Google+</option>
+						<option value="youtube">Youtube</option>
+						<option value="instagram">Instagram</option>
+						<option value="other">Other</option>
+					</question>
+					<group>
+						<rule>mkt_communication_social~~'other'</rule>
+						<question id="mkt_communication_social_other" prev="mkt_communication_social_other" type="multiline">
+							If other, please specify
+						</question>
+					</group>
+				</group>
+				
+				<question id="mkt_cost" prev="mkt_cost" type="option" option-list="Yes/No">
+					Do you know your Cost per Acquisition?
+				</question>
+				<group>
+					<rule>mkt_cost=='Yes'</rule>
+					<question id="mkt_cost_amount" prev="mkt_cost_amount" type="money">
+						What is your Cost per Acquisition?
+					</question>
+				</group>
+				<question id="mkt_define_member_engagment" prev="mkt_define_member_engagment" type="multiline">
+					How do you define Member Engagement?
+				</question>
+				<question id="mkt_measure_member_engagment" prev="mkt_measure_member_engagment" type="multiline">
+					How do you measure Member Engagement? 
+				</question>
+			</group>
+			<question id="mkt_comment" type="multiline" mandatory="not-mandatory">Additional comments on this section</question>
+			<question id="mkt_file" module="genral" type="file" mandatory="not-mandatory">Any other resources relating to this section</question>
+		</section>
+		<section>
+			<label>Member Education</label>
+			<group id="advice-member-education" type="option" option-list="Yes/No">
+				<question id="advice_member_edu" prev="advice_member_edu" type="multioption">
+					Do you have formal education material which specifically addresses the following topics?
+					<option value="edu_super">Super Choice</option>
+					<option value="invest_overview">Investment overview</option>
+					<option value="invest_risk">Investment risk profiles</option>
+					<option value="invest_option">Investment options explained</option>
+					<option value="ins_benefits">Insurance benefits explained</option>
+					<option value="contrib">Contribution levels</option>
+					<option value="fees">Fees explained</option>
+					<option value="product">Product features and design</option>
+					<option value="highlight">Fund highlights</option>
+					<option value="commentary">Super, investment and/or economic commentary</option>
+					<option value="planning">Planning and budgeting for retirement</option>
+					<option value="strategy">Retirement strategies</option>
+					<option value="tax">Super tax in detail</option>
+					<option value="cocontrib">Co-contributions</option>
+					<option value="spouse">Spouse contributions</option>
+					<option value="pension">Pension funds explained</option>
+					<option value="family">Family Law</option>
+					<option value="estate">Estate Planning</option>
+					<option value="enough_super">How much super is enough</option>
+					<option value="regulatory_changes">Regulatory changes in super</option>
+					<option value="redundancy">Redundancy and super</option>
+					<option value="ttr">Transitioning to retirement</option>
+					<option value="women_suer">Women and super</option>
+					<option value="none">None of the above</option>
+					
+<!-- TODO					<option value="nonsuper">Additional non-super and ancillary benefits</option> -->
+					<score value="edu_super">0.2</score>
+					<score value="invest_overview">0.2</score>
+					<score value="invest_risk">0.2</score>
+					<score value="invest_option">0.2</score>
+					<score value="ins_benefits">0.2</score>
+					<score value="contrib">0.2</score>
+					<score value="fees">0.2</score>
+					<score value="product">0.2</score>
+					<score value="highlight">0.2</score>
+					<score value="commentary">0.2</score>
+					<score value="planning">0.2</score>
+					<score value="strategy">0.2</score>
+					<score value="tax">0.2</score>
+					<score value="cocontrib">0.2</score>
+					<score value="spouse">0.2</score>
+					<score value="pension">0.2</score>
+					<score value="family">0.2</score>
+					<score value="estate">0.2</score>
+					<score value="enough_super">0.2</score>
+					<score value="regulatory_changes">0.2</score>
+					<score value="redundancy">0.2</score>
+					<score value="ttr">0.2</score>
+				</question>
+				<question id="advice_biz_edu" prev="advice_biz_edu">
+					Do you have a specific business unit for member education?
+					<score value="Yes">5</score>
+				</question>
+				<group>
+					<rule>advice_biz_edu=='Yes'</rule>
+					<question id="advice_biz_edu_staff" prev="advice_biz_edu_staff">How many FTE staff are directly employed in this unit?
+						<option value="0">0</option>
+						<option value="1">1</option>
+						<option value="2">2</option>
+						<option value="3">3</option>
+						<option value="4">4</option>
+						<option value="5">5</option>
+						<option value="6">6</option>
+						<option value="7">7</option>
+						<option value="8">8</option>
+						<option value="9">9</option>
+						<option value="10">10</option>
+						<option value="11to15">11-15</option>
+						<option value="16to20">16-20</option>
+						<option value="20plus">20+</option>
+						
+						<score value="3">0.5</score>
+						<score value="4">1</score>
+						<score value="5">1</score>
+						<score value="more">2</score>
+					</question>
+				</group>
+				<question id="advice_member_edu_3rdparty" prev="advice_member_edu_3rdparty">
+					Do you use third party providers to develop or deliver any part of your Member Education Program?
+				</question>
+				<group>
+					<rule>advice_member_edu_3rdparty=='Yes'</rule>
+					<question id="advice_member_edu_3rdparty_name" prev="advice_member_edu_3rdparty_name" type="text">If so, what is the name of the provider?</question>
+					<question id="advice_member_ext_dev" prev="advice_member_ext_dev" type="multiline">
+						What parts of your program are developed or delivered externally?
+					</question>
+				</group>				
+				<question id="advice_fte_presenters" prev="advice_fte_presenters" type="number">
+					How many FTE equivalent seminar presenters do you have?
+				</question>
+				<question id="advice_fte_presenters_employees" prev="advice_fte_presenters_employees" type="percentage">
+					What proportion are employees of the Fund?
+				</question>
+				<question id="advice_presenters_rg146" type="option" prev="advice_presenters_rg146">
+					What proportion of your seminar presenters are RG146 compliant?
+					<option value="0">0%</option>
+					<option value="49">&lt;50%</option>
+					<option value="90">50%-90%</option>
+					<option value="100">90%-100%</option>
+
+					<score value="49">0.5</score>
+					<score value="90">2</score>
+					<score value="100">4</score>
+				</question>				
+				<question id="advice_presenters_dfp" type="option" prev="advice_presenters_dfp">
+					What proportion of your seminar presenters are DFP qualified?
+					<option value="0">0%</option>
+					<option value="49">&lt;50%</option>
+					<option value="90">50%-90%</option>
+					<option value="100">90%-100%</option>
+
+					<score value="49">0.5</score>
+					<score value="90">2</score>
+					<score value="100">4</score>
+				</question>
+				<question id="admin_info_session" prev="admin_info_session" option-list="Yes/No">
+					Are formal information sessions for members provided when an employer group joins the Fund?
+					<score value="Yes">1</score>
+				</question>
+				<question id="admin_ongoing_info_session" prev="admin_ongoing_info_session" option-list="Yes/No">
+					Are ongoing information sessions or seminars held for existing employers and members?
+					<score value="Yes">1</score>
+				</question>
+				<group>
+					<rule>admin_ongoing_info_session=='Yes'</rule>
+					<question id="admin_seminar_member_contact" prev="admin_seminar_member_contact">
+						Are members proactively contacted to let them know sessions are available?
+						<score value="Yes">1</score>
+					</question>
+					<group>
+						<rule>admin_seminar_member_contact=='Yes'</rule>
+						<question id="admin_seminar_member_contact_method" prev="admin_seminar_member_contact_method" type="multioption">
+							How are they contacted?
+							<option value="Phone">Phone</option>
+							<option value="Email">Email</option>
+							<option value="SMS">SMS</option>
+							<option value="Letter">Written Correspondence</option>
+						</question>
+					</group>
+					<question id="admin_n_seminars" prev="admin_n_seminars" type="text">
+						Approximately how many seminars were held in the 12 months to 30 June year;?
+					</question>
+					<question id="admin_n_attend" prev="admin_n_seminars" type="text">
+						Approximately how many members attended seminars in the 12 months to 30 June year;?
+					</question>
+					<question id="pension_mem_seminars" prev="pension_mem_seminars" type="number">
+						How many seminars were focused on pension members?
+					</question>
+					<question id="admin_seminar_type" prev="admin_seminar_type" type="multioption">
+						Are seminars employer specific or open invite?
+						<option value="specific">Employer specific</option>
+						<option value="open">Open to all members</option>
+					</question>
+					<question id="admin_seminar_online_rego" prev="admin_seminar_online_rego">
+						Do you offer online registration for seminars?
+						<score value="Yes">1</score>
+					</question>
+
+					<question id="admin_seminar_site" prev="admin_seminar_site" type="multioption">
+						What sites are seminars delivered from?
+						<option value="office">At fund offices or shop front</option>
+						<option value="employer_visit">Employer visit</option>
+						<option value="thirdparty">Third party venues</option>
+						<option value="online">Online/web-cast</option>
+						<score value="office">0.5</score>
+						<score value="employer_visit">0.5</score>
+						<score value="thirdparty">0.5</score>
+						<score value="online">0.5</score>
+					</question>
+					<group>
+						<rule>admin_seminar_site~~'online'</rule>
+						<question id="admin_seminar_online_format" type="multioption">
+							Are online/webcasts interactive?
+							<option value="interactive">Interactive</option>
+							<option value="prerec">Pre-recorded</option>
+						</question>
+					</group>
+					<question id="admin_seminar_location" prev="admin_seminar_location" type="multioption">
+						Where are physical seminars provided?
+						<option value="bris">Brisbane</option>
+						<option value="syd">Sydney</option>
+						<option value="melb">Melbourne</option>
+						<option value="hob">Hobart</option>
+						<option value="ade">Adelaide</option>
+						<option value="per">Perth</option>
+						<option value="dar">Darwin</option>
+						<option value="other">Other regional centres</option>
+					</question>
+					<group>
+						<rule>admin_seminar_location~~'other'</rule>
+						<question id="admin_seminar_location_other" prev="admin_seminar_location_other" type="text">
+							Other regional centre
+						</question>
+					</group>
+					<question id="admin_seminar_topics" prev="admin_seminar_topics" type="multiline">
+						What topics are typically covered at the seminars?
+					</question>
+					<question id="admin_seminar_finplan" prev="admin_seminar_finplan" option-list="Yes/No">
+						Are Financial Planners or similarly qualified personnel on hand to provide immediate scaled advice? 
+						<score value="Yes">2.5</score>
+					</question>
+					<question id="admin_seminar_measure" prev="admin_seminar_measure" type="multiline">
+						How do you measure the success of your education program?
+					</question>
+					<question id="admin_seminar_feedback" prev="admin_seminar_feedback">
+						Do you capture member feedback from seminars?
+						<score value="Yes">2</score>
+					</question>
+					<group>
+						<rule>admin_seminar_feedback=='Yes'</rule>
+						<question id="admin_seminar_feedback_rating" type="multiline">
+							What does it measure?
+						</question>
+					</group>
+					<question id="admin_seminar_top_topics" prev="admin_seminar_top_topics" type="multiline">
+						What are the 3 most popular seminar topics in order?
+					</question>
+					<question id="admin_seminar_mem_info" type="number">
+						As a result of your seminar program, how many members sought further information?
+					</question>
+					<question id="admin_seminar_mem_advice" type="number">
+						As a result of your seminar program, how many members sought financial advice?
+					</question>
+					<question id="admin_seminar_mem_planning" type="number">
+						As a result of your seminar program, how many members sought financial advice and completed the financial planning process?
+					</question>
+					<question id="admin_seminar_mem_telemarket" prev="admin_seminar_mem_telemarket">
+						Do you follow up members with outbound telemarketing calls to generate leads for financial advisers?
+					</question>
+				</group>
+				<question id="admin_material" prev="admin_material" option-list="1-6">
+					How many times per year do you send paper based education materials to members?
+					<score value="2">2</score>
+					<score value="3">3</score>
+					<score value="4">5</score>
+					<score value="5">5</score>
+					<score value="6">5</score>
+					<score value="&gt;6">5</score>
+				</question>
+				<question id="admin_electronic_material" prev="admin_electronic_material" option-list="1-6">
+					How many times per year do you send electronic education materials to members?
+				</question>
+				<question id="admin_material_newsletter" prev="admin_material" type="text">Name of newsletters</question>
+
+				<question id="mkt_member_dist_plat" prev="mkt_member_dist_plat" type="multioption">
+					Which of the following platforms do you use to distribute communications to members?
+					<option value="online">Online</option>
+					<option value="face">Face to face</option>
+					<option value="seminars">Seminars</option>
+					<option value="webinars">Webinars</option>
+					<option value="fin_plan">Financial planners</option>
+					<option value="newsletters">Newsletters</option>
+					<option value="enewsletters">eNewsletters</option>
+					<option value="flyers">Flyers/Factsheets</option>
+					<option value="case_studies">Case Studies</option>
+					<option value="magazines">Magazines</option>
+					<option value="sms">SMS</option>
+					<option value="online_forms">Online Forms</option>
+				</question>
+
+			</group>
+		</section>
+</xml>
+		
