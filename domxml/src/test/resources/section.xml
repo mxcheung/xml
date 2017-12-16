@@ -1,0 +1,90 @@
+<?xml version="1.0"?>
+		<section>
+			<label>Member Communications</label>
+			
+
+			<question id="admin_member_statement" prev="admin_member_statement" option-list="time frequency">
+				How often are member statements provided to members each year?
+				<score value="monthly">4</score>
+				<score value="quarterly">4</score>
+				<score value="half_yearly">2</score>
+				<score value="annual">0</score>
+			</question>
+			<question id="admin_statement_deliv" prev="admin_statement_deliv" type="multioption">
+				How are statements delivered?
+				<option value="printed">Printed letter</option>
+				<option value="email">Email</option>
+				<score value="email">0.5</score>
+			</question>
+			<question id="admin_statement_electronic" prev="admin_statement_electronic" type="percentage">
+				What percentage of your most recent member statements were communicated electronically?
+			</question>
+			<question id="admin_statement_projection_prev" prev="admin_statement_projection_prev" option-list="Yes/No">
+				For your most recent Member Statements, was a retirement income projection provided to members?
+				<score value="yes">1</score>
+			</question>
+			<question id="admin_statement_projection_fut" prev="admin_statement_projection_fut" option-list="Yes/No">
+				For your June year; Member Statements, will a retirement income projection be provided to members?
+				<score value="yes">2</score>
+			</question>
+			<question id="ability_receive_video_statement" prev="ability_receive_video_statement" option-list="Yes/No">
+				Do you provide members with the ability to receive a personal video statement?
+			</question>
+			<question id="registered_members_period" prev="registered_members_period" type="number">
+				How many members are registered or expected to receive these for the June year; statement period?
+			</question>
+
+<!-- 			<question id="admin_record_contri" prev="admin_record_contri" option-list="0-4">How many of these are records of contributions only?</question> -->
+<!--			<question id="admin_contri_receipt_freq" prev="admin_record_contri" option-list="0-4">
+				How often do you provide members with a receipt of contribution statement each year?
+					
+				<option value="0">Never</option>
+				<option value="1">Once</option>
+			</question>-->
+			<question id="admin_contri_receipt" prev="admin_contri_receipt" type="multioption">
+				Do you provide members with a receipt of individual contributions for:
+				<option value="sg">SG Contributions</option>
+				<option value="rollovers">Rollovers</option>
+				<option value="personal">Personal Contributions</option>
+				<option value="none">None of the above</option>
+				
+				<score value="sg">0.5</score>
+				<score value="rollovers">0.5</score>
+				<score value="personal">0.5</score>
+			</question>
+			<group>
+				<rule>admin_contri_receipt!='none'</rule>
+				<question id="admin_contri_receipt_com" prev="admin_contri_receipt_com" type="multioption">
+					How is the receipt communicated?
+					<option value="letter">Printed letter</option>
+					<option value="email">Email</option>
+					<option value="sms">SMS</option>
+					<option value="other">Other</option>
+					<score value="email">0.5</score>
+					<score value="sms">1</score>
+				</question>
+				<group>
+					<rule>admin_contri_receipt_com~~'other'</rule>
+					<question id="admin_contri_receipt_com_other" prev="admin_contri_receipt_com_other" type="text">If other, please specify</question>
+				</group>
+			</group>
+			<question id="admin_member_mobile" prev="admin_member_mobile" type="percentage">
+				What percentage of members does the fund have mobile phone numbers for?
+			</question>
+			<question id="admin_member_email" prev="admin_member_email" type="percentage">
+				What percentage of members does the fund have an email address for?
+			</question>
+			<question id="admin_member_email_enquiries" type="text">
+				Please approximate the total number of email enquiries received for the past 12 months to 30 June year;.
+			</question>
+			<question id="admin_member_web_enquiries" type="text">
+				Please approximate the total number of web enquiries received for the past 12 months to 30 June year;.
+			</question>
+			<question id="admin_member_written_enquiries" type="text">
+				Please approximate the total number of written enquiries received for the past 12 months to 30 June year;.				
+			</question>
+
+
+		</section>	
+		
+		

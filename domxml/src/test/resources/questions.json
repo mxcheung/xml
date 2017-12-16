@@ -1,0 +1,198 @@
+ {
+	"question": [
+		{
+			"score": [
+				{
+					"value": "monthly",
+					"content": 4
+				},
+				{
+					"value": "quarterly",
+					"content": 4
+				},
+				{
+					"value": "half_yearly",
+					"content": 2
+				},
+				{
+					"value": "annual",
+					"content": 0
+				}
+			],
+			"prev": "admin_member_statement",
+			"option-list": "time frequency",
+			"id": "admin_member_statement",
+			"content": "How often are member statements provided to members each year?"
+		},
+		{
+			"score": {
+				"value": "email",
+				"content": 0.5
+			},
+			"prev": "admin_statement_deliv",
+			"id": "admin_statement_deliv",
+			"type": "multioption",
+			"content": "How are statements delivered?",
+			"option": [
+				{
+					"value": "printed",
+					"content": "Printed letter"
+				},
+				{
+					"value": "email",
+					"content": "Email"
+				}
+			]
+		},
+		{
+			"prev": "admin_statement_electronic",
+			"id": "admin_statement_electronic",
+			"type": "percentage",
+			"content": "What percentage of your most recent member statements were communicated electronically?"
+		},
+		{
+			"score": {
+				"value": "yes",
+				"content": 1
+			},
+			"prev": "admin_statement_projection_prev",
+			"option-list": "Yes/No",
+			"id": "admin_statement_projection_prev",
+			"content": "For your most recent Member Statements, was a retirement income projection provided to members?"
+		},
+		{
+			"score": {
+				"value": "yes",
+				"content": 2
+			},
+			"prev": "admin_statement_projection_fut",
+			"option-list": "Yes/No",
+			"id": "admin_statement_projection_fut",
+			"content": "For your June year; Member Statements, will a retirement income projection be provided to members?"
+		},
+		{
+			"prev": "ability_receive_video_statement",
+			"option-list": "Yes/No",
+			"id": "ability_receive_video_statement",
+			"content": "Do you provide members with the ability to receive a personal video statement?"
+		},
+		{
+			"prev": "registered_members_period",
+			"id": "registered_members_period",
+			"type": "number",
+			"content": "How many members are registered or expected to receive these for the June year; statement period?"
+		},
+		{
+			"score": [
+				{
+					"value": "sg",
+					"content": 0.5
+				},
+				{
+					"value": "rollovers",
+					"content": 0.5
+				},
+				{
+					"value": "personal",
+					"content": 0.5
+				}
+			],
+			"prev": "admin_contri_receipt",
+			"id": "admin_contri_receipt",
+			"type": "multioption",
+			"content": "Do you provide members with a receipt of individual contributions for:",
+			"option": [
+				{
+					"value": "sg",
+					"content": "SG Contributions"
+				},
+				{
+					"value": "rollovers",
+					"content": "Rollovers"
+				},
+				{
+					"value": "personal",
+					"content": "Personal Contributions"
+				},
+				{
+					"value": "none",
+					"content": "None of the above"
+				}
+			]
+		},
+		{
+			"prev": "admin_member_mobile",
+			"id": "admin_member_mobile",
+			"type": "percentage",
+			"content": "What percentage of members does the fund have mobile phone numbers for?"
+		},
+		{
+			"prev": "admin_member_email",
+			"id": "admin_member_email",
+			"type": "percentage",
+			"content": "What percentage of members does the fund have an email address for?"
+		},
+		{
+			"id": "admin_member_email_enquiries",
+			"type": "text",
+			"content": "Please approximate the total number of email enquiries received for the past 12 months to 30 June year;."
+		},
+		{
+			"id": "admin_member_web_enquiries",
+			"type": "text",
+			"content": "Please approximate the total number of web enquiries received for the past 12 months to 30 June year;."
+		},
+		{
+			"id": "admin_member_written_enquiries",
+			"type": "text",
+			"content": "Please approximate the total number of written enquiries received for the past 12 months to 30 June year;."
+		}
+	],
+	"label": "Member Communications",
+	"group": {
+		"question": {
+			"score": [
+				{
+					"value": "email",
+					"content": 0.5
+				},
+				{
+					"value": "sms",
+					"content": 1
+				}
+			],
+			"prev": "admin_contri_receipt_com",
+			"id": "admin_contri_receipt_com",
+			"type": "multioption",
+			"content": "How is the receipt communicated?",
+			"option": [
+				{
+					"value": "letter",
+					"content": "Printed letter"
+				},
+				{
+					"value": "email",
+					"content": "Email"
+				},
+				{
+					"value": "sms",
+					"content": "SMS"
+				},
+				{
+					"value": "other",
+					"content": "Other"
+				}
+			]
+		},
+		"rule": "admin_contri_receipt!='none'",
+		"group": {
+			"question": {
+				"prev": "admin_contri_receipt_com_other",
+				"id": "admin_contri_receipt_com_other",
+				"type": "text",
+				"content": "If other, please specify"
+			},
+			"rule": "admin_contri_receipt_com~~'other'"
+		}
+	}
+}

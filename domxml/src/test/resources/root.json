@@ -1,0 +1,1213 @@
+{
+    "section": [
+        {
+            "question": [
+                {
+                    "score": [
+                        {
+                            "value": "monthly",
+                            "content": 4
+                        },
+                        {
+                            "value": "quarterly",
+                            "content": 4
+                        },
+                        {
+                            "value": "half_yearly",
+                            "content": 2
+                        },
+                        {
+                            "value": "annual",
+                            "content": 0
+                        }
+                    ],
+                    "prev": "admin_member_statement",
+                    "option-list": "time frequency",
+                    "id": "admin_member_statement",
+                    "content": "How often are member statements provided to members each year?"
+                },
+                {
+                    "score": {
+                        "value": "email",
+                        "content": 0.5
+                    },
+                    "prev": "admin_statement_deliv",
+                    "id": "admin_statement_deliv",
+                    "type": "multioption",
+                    "content": "How are statements delivered?",
+                    "option": [
+                        {
+                            "value": "printed",
+                            "content": "Printed letter"
+                        },
+                        {
+                            "value": "email",
+                            "content": "Email"
+                        }
+                    ]
+                },
+                {
+                    "prev": "admin_statement_electronic",
+                    "id": "admin_statement_electronic",
+                    "type": "percentage",
+                    "content": "What percentage of your most recent member statements were communicated electronically?"
+                },
+                {
+                    "score": {
+                        "value": "yes",
+                        "content": 1
+                    },
+                    "prev": "admin_statement_projection_prev",
+                    "option-list": "Yes/No",
+                    "id": "admin_statement_projection_prev",
+                    "content": "For your most recent Member Statements, was a retirement income projection provided to members?"
+                },
+                {
+                    "score": {
+                        "value": "yes",
+                        "content": 2
+                    },
+                    "prev": "admin_statement_projection_fut",
+                    "option-list": "Yes/No",
+                    "id": "admin_statement_projection_fut",
+                    "content": "For your June year; Member Statements, will a retirement income projection be provided to members?"
+                },
+                {
+                    "prev": "ability_receive_video_statement",
+                    "option-list": "Yes/No",
+                    "id": "ability_receive_video_statement",
+                    "content": "Do you provide members with the ability to receive a personal video statement?"
+                },
+                {
+                    "prev": "registered_members_period",
+                    "id": "registered_members_period",
+                    "type": "number",
+                    "content": "How many members are registered or expected to receive these for the June year; statement period?"
+                },
+                {
+                    "score": [
+                        {
+                            "value": "sg",
+                            "content": 0.5
+                        },
+                        {
+                            "value": "rollovers",
+                            "content": 0.5
+                        },
+                        {
+                            "value": "personal",
+                            "content": 0.5
+                        }
+                    ],
+                    "prev": "admin_contri_receipt",
+                    "id": "admin_contri_receipt",
+                    "type": "multioption",
+                    "content": "Do you provide members with a receipt of individual contributions for:",
+                    "option": [
+                        {
+                            "value": "sg",
+                            "content": "SG Contributions"
+                        },
+                        {
+                            "value": "rollovers",
+                            "content": "Rollovers"
+                        },
+                        {
+                            "value": "personal",
+                            "content": "Personal Contributions"
+                        },
+                        {
+                            "value": "none",
+                            "content": "None of the above"
+                        }
+                    ]
+                },
+                {
+                    "prev": "admin_member_mobile",
+                    "id": "admin_member_mobile",
+                    "type": "percentage",
+                    "content": "What percentage of members does the fund have mobile phone numbers for?"
+                },
+                {
+                    "prev": "admin_member_email",
+                    "id": "admin_member_email",
+                    "type": "percentage",
+                    "content": "What percentage of members does the fund have an email address for?"
+                },
+                {
+                    "id": "admin_member_email_enquiries",
+                    "type": "text",
+                    "content": "Please approximate the total number of email enquiries received for the past 12 months to 30 June year;."
+                },
+                {
+                    "id": "admin_member_web_enquiries",
+                    "type": "text",
+                    "content": "Please approximate the total number of web enquiries received for the past 12 months to 30 June year;."
+                },
+                {
+                    "id": "admin_member_written_enquiries",
+                    "type": "text",
+                    "content": "Please approximate the total number of written enquiries received for the past 12 months to 30 June year;."
+                }
+            ],
+            "label": "Member Communications",
+            "group": {
+                "question": {
+                    "score": [
+                        {
+                            "value": "email",
+                            "content": 0.5
+                        },
+                        {
+                            "value": "sms",
+                            "content": 1
+                        }
+                    ],
+                    "prev": "admin_contri_receipt_com",
+                    "id": "admin_contri_receipt_com",
+                    "type": "multioption",
+                    "content": "How is the receipt communicated?",
+                    "option": [
+                        {
+                            "value": "letter",
+                            "content": "Printed letter"
+                        },
+                        {
+                            "value": "email",
+                            "content": "Email"
+                        },
+                        {
+                            "value": "sms",
+                            "content": "SMS"
+                        },
+                        {
+                            "value": "other",
+                            "content": "Other"
+                        }
+                    ]
+                },
+                "rule": "admin_contri_receipt!='none'",
+                "group": {
+                    "question": {
+                        "prev": "admin_contri_receipt_com_other",
+                        "id": "admin_contri_receipt_com_other",
+                        "type": "text",
+                        "content": "If other, please specify"
+                    },
+                    "rule": "admin_contri_receipt_com~~'other'"
+                }
+            }
+        },
+        {
+            "question": [
+                {
+                    "id": "mkt_comment",
+                    "type": "multiline",
+                    "mandatory": "not-mandatory",
+                    "content": "Additional comments on this section"
+                },
+                {
+                    "module": "genral",
+                    "id": "mkt_file",
+                    "type": "file",
+                    "mandatory": "not-mandatory",
+                    "content": "Any other resources relating to this section"
+                }
+            ],
+            "label": "Marketing and Corporate Communications",
+            "group": {
+                "question": [
+                    {
+                        "prev": "mkt_spend",
+                        "id": "mkt_spend",
+                        "content": "What was your marketing spend in the year2;-year; financial year?",
+                        "option": [
+                            {
+                                "value": "no_buget",
+                                "content": "$0 or no budget"
+                            },
+                            {
+                                "value": "less_100k",
+                                "content": "Less than $100,000"
+                            },
+                            {
+                                "value": "100k_500k",
+                                "content": "$100,001 - $500,000"
+                            },
+                            {
+                                "value": "500k_1m",
+                                "content": "$500,001 - $999,999"
+                            },
+                            {
+                                "value": "1m-2m",
+                                "content": "$1 - $2 million"
+                            },
+                            {
+                                "value": "2m-3m",
+                                "content": "$2 - $3 million"
+                            },
+                            {
+                                "value": "3m-4m",
+                                "content": "$3 - $4 million"
+                            },
+                            {
+                                "value": "4m-5m",
+                                "content": "$4 - $5 million"
+                            },
+                            {
+                                "value": "more_5m",
+                                "content": "Above $5 million"
+                            }
+                        ]
+                    },
+                    {
+                        "prev": "mkt_team",
+                        "option-list": "Yes/No",
+                        "id": "mkt_team",
+                        "content": "Do you have an internal marketing team?"
+                    },
+                    {
+                        "prev": "mkt_communication",
+                        "id": "mkt_communication",
+                        "type": "multioption",
+                        "content": "Do you use any of the following communication methods to target current and potential members?",
+                        "option": [
+                            {
+                                "value": "tvad",
+                                "content": "TV Advertising"
+                            },
+                            {
+                                "value": "rdad",
+                                "content": "Radio Advertising"
+                            },
+                            {
+                                "value": "news",
+                                "content": "Newspaper/Magazine Advertising"
+                            },
+                            {
+                                "value": "mail",
+                                "content": "Direct Mail"
+                            },
+                            {
+                                "value": "online",
+                                "content": "Online"
+                            },
+                            {
+                                "value": "sponsorship",
+                                "content": "Sponsorship"
+                            },
+                            {
+                                "value": "social",
+                                "content": "Social Networking Sites"
+                            },
+                            {
+                                "value": "sms",
+                                "content": "SMS"
+                            },
+                            {
+                                "value": "blog",
+                                "content": "Blogging"
+                            }
+                        ]
+                    },
+                    {
+                        "prev": "mkt_cost",
+                        "option-list": "Yes/No",
+                        "id": "mkt_cost",
+                        "type": "option",
+                        "content": "Do you know your Cost per Acquisition?"
+                    },
+                    {
+                        "prev": "mkt_define_member_engagment",
+                        "id": "mkt_define_member_engagment",
+                        "type": "multiline",
+                        "content": "How do you define Member Engagement?"
+                    },
+                    {
+                        "prev": "mkt_measure_member_engagment",
+                        "id": "mkt_measure_member_engagment",
+                        "type": "multiline",
+                        "content": "How do you measure Member Engagement?"
+                    }
+                ],
+                "id": "market",
+                "type": "option",
+                "group": [
+                    {
+                        "question": {
+                            "prev": "mkt_team_size",
+                            "id": "mkt_team_size",
+                            "content": "How large is the team?",
+                            "option": [
+                                {
+                                    "value": "10_more",
+                                    "content": "10 or more"
+                                },
+                                {
+                                    "value": "5_to_9",
+                                    "content": "5 to 9"
+                                },
+                                {
+                                    "value": "2_to_4",
+                                    "content": "2 to 4"
+                                },
+                                {
+                                    "value": 1,
+                                    "content": 1
+                                }
+                            ]
+                        },
+                        "rule": "mkt_team=='Yes'"
+                    },
+                    {
+                        "question": {
+                            "prev": "mkt_communication_social",
+                            "id": "mkt_communication_social",
+                            "type": "multioption",
+                            "content": "What social networking sites are used?",
+                            "option": [
+                                {
+                                    "value": "facebook",
+                                    "content": "Facebook"
+                                },
+                                {
+                                    "value": "twitter",
+                                    "content": "Twitter"
+                                },
+                                {
+                                    "value": "linkedin",
+                                    "content": "LinkedIn"
+                                },
+                                {
+                                    "value": "googleplus",
+                                    "content": "Google+"
+                                },
+                                {
+                                    "value": "youtube",
+                                    "content": "Youtube"
+                                },
+                                {
+                                    "value": "instagram",
+                                    "content": "Instagram"
+                                },
+                                {
+                                    "value": "other",
+                                    "content": "Other"
+                                }
+                            ]
+                        },
+                        "rule": "mkt_communication~~'social'",
+                        "group": {
+                            "question": {
+                                "prev": "mkt_communication_social_other",
+                                "id": "mkt_communication_social_other",
+                                "type": "multiline",
+                                "content": "If other, please specify"
+                            },
+                            "rule": "mkt_communication_social~~'other'"
+                        }
+                    },
+                    {
+                        "question": {
+                            "prev": "mkt_cost_amount",
+                            "id": "mkt_cost_amount",
+                            "type": "money",
+                            "content": "What is your Cost per Acquisition?"
+                        },
+                        "rule": "mkt_cost=='Yes'"
+                    }
+                ]
+            }
+        },
+        {
+            "label": "Member Education",
+            "group": {
+                "question": [
+                    {
+                        "score": [
+                            {
+                                "value": "edu_super",
+                                "content": 0.2
+                            },
+                            {
+                                "value": "invest_overview",
+                                "content": 0.2
+                            },
+                            {
+                                "value": "invest_risk",
+                                "content": 0.2
+                            },
+                            {
+                                "value": "invest_option",
+                                "content": 0.2
+                            },
+                            {
+                                "value": "ins_benefits",
+                                "content": 0.2
+                            },
+                            {
+                                "value": "contrib",
+                                "content": 0.2
+                            },
+                            {
+                                "value": "fees",
+                                "content": 0.2
+                            },
+                            {
+                                "value": "product",
+                                "content": 0.2
+                            },
+                            {
+                                "value": "highlight",
+                                "content": 0.2
+                            },
+                            {
+                                "value": "commentary",
+                                "content": 0.2
+                            },
+                            {
+                                "value": "planning",
+                                "content": 0.2
+                            },
+                            {
+                                "value": "strategy",
+                                "content": 0.2
+                            },
+                            {
+                                "value": "tax",
+                                "content": 0.2
+                            },
+                            {
+                                "value": "cocontrib",
+                                "content": 0.2
+                            },
+                            {
+                                "value": "spouse",
+                                "content": 0.2
+                            },
+                            {
+                                "value": "pension",
+                                "content": 0.2
+                            },
+                            {
+                                "value": "family",
+                                "content": 0.2
+                            },
+                            {
+                                "value": "estate",
+                                "content": 0.2
+                            },
+                            {
+                                "value": "enough_super",
+                                "content": 0.2
+                            },
+                            {
+                                "value": "regulatory_changes",
+                                "content": 0.2
+                            },
+                            {
+                                "value": "redundancy",
+                                "content": 0.2
+                            },
+                            {
+                                "value": "ttr",
+                                "content": 0.2
+                            }
+                        ],
+                        "prev": "advice_member_edu",
+                        "id": "advice_member_edu",
+                        "type": "multioption",
+                        "content": "Do you have formal education material which specifically addresses the following topics?",
+                        "option": [
+                            {
+                                "value": "edu_super",
+                                "content": "Super Choice"
+                            },
+                            {
+                                "value": "invest_overview",
+                                "content": "Investment overview"
+                            },
+                            {
+                                "value": "invest_risk",
+                                "content": "Investment risk profiles"
+                            },
+                            {
+                                "value": "invest_option",
+                                "content": "Investment options explained"
+                            },
+                            {
+                                "value": "ins_benefits",
+                                "content": "Insurance benefits explained"
+                            },
+                            {
+                                "value": "contrib",
+                                "content": "Contribution levels"
+                            },
+                            {
+                                "value": "fees",
+                                "content": "Fees explained"
+                            },
+                            {
+                                "value": "product",
+                                "content": "Product features and design"
+                            },
+                            {
+                                "value": "highlight",
+                                "content": "Fund highlights"
+                            },
+                            {
+                                "value": "commentary",
+                                "content": "Super, investment and/or economic commentary"
+                            },
+                            {
+                                "value": "planning",
+                                "content": "Planning and budgeting for retirement"
+                            },
+                            {
+                                "value": "strategy",
+                                "content": "Retirement strategies"
+                            },
+                            {
+                                "value": "tax",
+                                "content": "Super tax in detail"
+                            },
+                            {
+                                "value": "cocontrib",
+                                "content": "Co-contributions"
+                            },
+                            {
+                                "value": "spouse",
+                                "content": "Spouse contributions"
+                            },
+                            {
+                                "value": "pension",
+                                "content": "Pension funds explained"
+                            },
+                            {
+                                "value": "family",
+                                "content": "Family Law"
+                            },
+                            {
+                                "value": "estate",
+                                "content": "Estate Planning"
+                            },
+                            {
+                                "value": "enough_super",
+                                "content": "How much super is enough"
+                            },
+                            {
+                                "value": "regulatory_changes",
+                                "content": "Regulatory changes in super"
+                            },
+                            {
+                                "value": "redundancy",
+                                "content": "Redundancy and super"
+                            },
+                            {
+                                "value": "ttr",
+                                "content": "Transitioning to retirement"
+                            },
+                            {
+                                "value": "women_suer",
+                                "content": "Women and super"
+                            },
+                            {
+                                "value": "none",
+                                "content": "None of the above"
+                            }
+                        ]
+                    },
+                    {
+                        "score": {
+                            "value": "Yes",
+                            "content": 5
+                        },
+                        "prev": "advice_biz_edu",
+                        "id": "advice_biz_edu",
+                        "content": "Do you have a specific business unit for member education?"
+                    },
+                    {
+                        "prev": "advice_member_edu_3rdparty",
+                        "id": "advice_member_edu_3rdparty",
+                        "content": "Do you use third party providers to develop or deliver any part of your Member Education Program?"
+                    },
+                    {
+                        "prev": "advice_fte_presenters",
+                        "id": "advice_fte_presenters",
+                        "type": "number",
+                        "content": "How many FTE equivalent seminar presenters do you have?"
+                    },
+                    {
+                        "prev": "advice_fte_presenters_employees",
+                        "id": "advice_fte_presenters_employees",
+                        "type": "percentage",
+                        "content": "What proportion are employees of the Fund?"
+                    },
+                    {
+                        "score": [
+                            {
+                                "value": 49,
+                                "content": 0.5
+                            },
+                            {
+                                "value": 90,
+                                "content": 2
+                            },
+                            {
+                                "value": 100,
+                                "content": 4
+                            }
+                        ],
+                        "prev": "advice_presenters_rg146",
+                        "id": "advice_presenters_rg146",
+                        "type": "option",
+                        "content": "What proportion of your seminar presenters are RG146 compliant?",
+                        "option": [
+                            {
+                                "value": 0,
+                                "content": "0%"
+                            },
+                            {
+                                "value": 49,
+                                "content": "<50%"
+                            },
+                            {
+                                "value": 90,
+                                "content": "50%-90%"
+                            },
+                            {
+                                "value": 100,
+                                "content": "90%-100%"
+                            }
+                        ]
+                    },
+                    {
+                        "score": [
+                            {
+                                "value": 49,
+                                "content": 0.5
+                            },
+                            {
+                                "value": 90,
+                                "content": 2
+                            },
+                            {
+                                "value": 100,
+                                "content": 4
+                            }
+                        ],
+                        "prev": "advice_presenters_dfp",
+                        "id": "advice_presenters_dfp",
+                        "type": "option",
+                        "content": "What proportion of your seminar presenters are DFP qualified?",
+                        "option": [
+                            {
+                                "value": 0,
+                                "content": "0%"
+                            },
+                            {
+                                "value": 49,
+                                "content": "<50%"
+                            },
+                            {
+                                "value": 90,
+                                "content": "50%-90%"
+                            },
+                            {
+                                "value": 100,
+                                "content": "90%-100%"
+                            }
+                        ]
+                    },
+                    {
+                        "score": {
+                            "value": "Yes",
+                            "content": 1
+                        },
+                        "prev": "admin_info_session",
+                        "option-list": "Yes/No",
+                        "id": "admin_info_session",
+                        "content": "Are formal information sessions for members provided when an employer group joins the Fund?"
+                    },
+                    {
+                        "score": {
+                            "value": "Yes",
+                            "content": 1
+                        },
+                        "prev": "admin_ongoing_info_session",
+                        "option-list": "Yes/No",
+                        "id": "admin_ongoing_info_session",
+                        "content": "Are ongoing information sessions or seminars held for existing employers and members?"
+                    },
+                    {
+                        "score": [
+                            {
+                                "value": 2,
+                                "content": 2
+                            },
+                            {
+                                "value": 3,
+                                "content": 3
+                            },
+                            {
+                                "value": 4,
+                                "content": 5
+                            },
+                            {
+                                "value": 5,
+                                "content": 5
+                            },
+                            {
+                                "value": 6,
+                                "content": 5
+                            },
+                            {
+                                "value": ">6",
+                                "content": 5
+                            }
+                        ],
+                        "prev": "admin_material",
+                        "option-list": "1-6",
+                        "id": "admin_material",
+                        "content": "How many times per year do you send paper based education materials to members?"
+                    },
+                    {
+                        "prev": "admin_electronic_material",
+                        "option-list": "1-6",
+                        "id": "admin_electronic_material",
+                        "content": "How many times per year do you send electronic education materials to members?"
+                    },
+                    {
+                        "prev": "admin_material",
+                        "id": "admin_material_newsletter",
+                        "type": "text",
+                        "content": "Name of newsletters"
+                    },
+                    {
+                        "prev": "mkt_member_dist_plat",
+                        "id": "mkt_member_dist_plat",
+                        "type": "multioption",
+                        "content": "Which of the following platforms do you use to distribute communications to members?",
+                        "option": [
+                            {
+                                "value": "online",
+                                "content": "Online"
+                            },
+                            {
+                                "value": "face",
+                                "content": "Face to face"
+                            },
+                            {
+                                "value": "seminars",
+                                "content": "Seminars"
+                            },
+                            {
+                                "value": "webinars",
+                                "content": "Webinars"
+                            },
+                            {
+                                "value": "fin_plan",
+                                "content": "Financial planners"
+                            },
+                            {
+                                "value": "newsletters",
+                                "content": "Newsletters"
+                            },
+                            {
+                                "value": "enewsletters",
+                                "content": "eNewsletters"
+                            },
+                            {
+                                "value": "flyers",
+                                "content": "Flyers/Factsheets"
+                            },
+                            {
+                                "value": "case_studies",
+                                "content": "Case Studies"
+                            },
+                            {
+                                "value": "magazines",
+                                "content": "Magazines"
+                            },
+                            {
+                                "value": "sms",
+                                "content": "SMS"
+                            },
+                            {
+                                "value": "online_forms",
+                                "content": "Online Forms"
+                            }
+                        ]
+                    }
+                ],
+                "option-list": "Yes/No",
+                "id": "advice-member-education",
+                "type": "option",
+                "group": [
+                    {
+                        "question": {
+                            "score": [
+                                {
+                                    "value": 3,
+                                    "content": 0.5
+                                },
+                                {
+                                    "value": 4,
+                                    "content": 1
+                                },
+                                {
+                                    "value": 5,
+                                    "content": 1
+                                },
+                                {
+                                    "value": "more",
+                                    "content": 2
+                                }
+                            ],
+                            "prev": "advice_biz_edu_staff",
+                            "id": "advice_biz_edu_staff",
+                            "content": "How many FTE staff are directly employed in this unit?",
+                            "option": [
+                                {
+                                    "value": 0,
+                                    "content": 0
+                                },
+                                {
+                                    "value": 1,
+                                    "content": 1
+                                },
+                                {
+                                    "value": 2,
+                                    "content": 2
+                                },
+                                {
+                                    "value": 3,
+                                    "content": 3
+                                },
+                                {
+                                    "value": 4,
+                                    "content": 4
+                                },
+                                {
+                                    "value": 5,
+                                    "content": 5
+                                },
+                                {
+                                    "value": 6,
+                                    "content": 6
+                                },
+                                {
+                                    "value": 7,
+                                    "content": 7
+                                },
+                                {
+                                    "value": 8,
+                                    "content": 8
+                                },
+                                {
+                                    "value": 9,
+                                    "content": 9
+                                },
+                                {
+                                    "value": 10,
+                                    "content": 10
+                                },
+                                {
+                                    "value": "11to15",
+                                    "content": "11-15"
+                                },
+                                {
+                                    "value": "16to20",
+                                    "content": "16-20"
+                                },
+                                {
+                                    "value": "20plus",
+                                    "content": "20+"
+                                }
+                            ]
+                        },
+                        "rule": "advice_biz_edu=='Yes'"
+                    },
+                    {
+                        "question": [
+                            {
+                                "prev": "advice_member_edu_3rdparty_name",
+                                "id": "advice_member_edu_3rdparty_name",
+                                "type": "text",
+                                "content": "If so, what is the name of the provider?"
+                            },
+                            {
+                                "prev": "advice_member_ext_dev",
+                                "id": "advice_member_ext_dev",
+                                "type": "multiline",
+                                "content": "What parts of your program are developed or delivered externally?"
+                            }
+                        ],
+                        "rule": "advice_member_edu_3rdparty=='Yes'"
+                    },
+                    {
+                        "question": [
+                            {
+                                "score": {
+                                    "value": "Yes",
+                                    "content": 1
+                                },
+                                "prev": "admin_seminar_member_contact",
+                                "id": "admin_seminar_member_contact",
+                                "content": "Are members proactively contacted to let them know sessions are available?"
+                            },
+                            {
+                                "prev": "admin_n_seminars",
+                                "id": "admin_n_seminars",
+                                "type": "text",
+                                "content": "Approximately how many seminars were held in the 12 months to 30 June year;?"
+                            },
+                            {
+                                "prev": "admin_n_seminars",
+                                "id": "admin_n_attend",
+                                "type": "text",
+                                "content": "Approximately how many members attended seminars in the 12 months to 30 June year;?"
+                            },
+                            {
+                                "prev": "pension_mem_seminars",
+                                "id": "pension_mem_seminars",
+                                "type": "number",
+                                "content": "How many seminars were focused on pension members?"
+                            },
+                            {
+                                "prev": "admin_seminar_type",
+                                "id": "admin_seminar_type",
+                                "type": "multioption",
+                                "content": "Are seminars employer specific or open invite?",
+                                "option": [
+                                    {
+                                        "value": "specific",
+                                        "content": "Employer specific"
+                                    },
+                                    {
+                                        "value": "open",
+                                        "content": "Open to all members"
+                                    }
+                                ]
+                            },
+                            {
+                                "score": {
+                                    "value": "Yes",
+                                    "content": 1
+                                },
+                                "prev": "admin_seminar_online_rego",
+                                "id": "admin_seminar_online_rego",
+                                "content": "Do you offer online registration for seminars?"
+                            },
+                            {
+                                "score": [
+                                    {
+                                        "value": "office",
+                                        "content": 0.5
+                                    },
+                                    {
+                                        "value": "employer_visit",
+                                        "content": 0.5
+                                    },
+                                    {
+                                        "value": "thirdparty",
+                                        "content": 0.5
+                                    },
+                                    {
+                                        "value": "online",
+                                        "content": 0.5
+                                    }
+                                ],
+                                "prev": "admin_seminar_site",
+                                "id": "admin_seminar_site",
+                                "type": "multioption",
+                                "content": "What sites are seminars delivered from?",
+                                "option": [
+                                    {
+                                        "value": "office",
+                                        "content": "At fund offices or shop front"
+                                    },
+                                    {
+                                        "value": "employer_visit",
+                                        "content": "Employer visit"
+                                    },
+                                    {
+                                        "value": "thirdparty",
+                                        "content": "Third party venues"
+                                    },
+                                    {
+                                        "value": "online",
+                                        "content": "Online/web-cast"
+                                    }
+                                ]
+                            },
+                            {
+                                "prev": "admin_seminar_location",
+                                "id": "admin_seminar_location",
+                                "type": "multioption",
+                                "content": "Where are physical seminars provided?",
+                                "option": [
+                                    {
+                                        "value": "bris",
+                                        "content": "Brisbane"
+                                    },
+                                    {
+                                        "value": "syd",
+                                        "content": "Sydney"
+                                    },
+                                    {
+                                        "value": "melb",
+                                        "content": "Melbourne"
+                                    },
+                                    {
+                                        "value": "hob",
+                                        "content": "Hobart"
+                                    },
+                                    {
+                                        "value": "ade",
+                                        "content": "Adelaide"
+                                    },
+                                    {
+                                        "value": "per",
+                                        "content": "Perth"
+                                    },
+                                    {
+                                        "value": "dar",
+                                        "content": "Darwin"
+                                    },
+                                    {
+                                        "value": "other",
+                                        "content": "Other regional centres"
+                                    }
+                                ]
+                            },
+                            {
+                                "prev": "admin_seminar_topics",
+                                "id": "admin_seminar_topics",
+                                "type": "multiline",
+                                "content": "What topics are typically covered at the seminars?"
+                            },
+                            {
+                                "score": {
+                                    "value": "Yes",
+                                    "content": 2.5
+                                },
+                                "prev": "admin_seminar_finplan",
+                                "option-list": "Yes/No",
+                                "id": "admin_seminar_finplan",
+                                "content": "Are Financial Planners or similarly qualified personnel on hand to provide immediate scaled advice?"
+                            },
+                            {
+                                "prev": "admin_seminar_measure",
+                                "id": "admin_seminar_measure",
+                                "type": "multiline",
+                                "content": "How do you measure the success of your education program?"
+                            },
+                            {
+                                "score": {
+                                    "value": "Yes",
+                                    "content": 2
+                                },
+                                "prev": "admin_seminar_feedback",
+                                "id": "admin_seminar_feedback",
+                                "content": "Do you capture member feedback from seminars?"
+                            },
+                            {
+                                "prev": "admin_seminar_top_topics",
+                                "id": "admin_seminar_top_topics",
+                                "type": "multiline",
+                                "content": "What are the 3 most popular seminar topics in order?"
+                            },
+                            {
+                                "id": "admin_seminar_mem_info",
+                                "type": "number",
+                                "content": "As a result of your seminar program, how many members sought further information?"
+                            },
+                            {
+                                "id": "admin_seminar_mem_advice",
+                                "type": "number",
+                                "content": "As a result of your seminar program, how many members sought financial advice?"
+                            },
+                            {
+                                "id": "admin_seminar_mem_planning",
+                                "type": "number",
+                                "content": "As a result of your seminar program, how many members sought financial advice and completed the financial planning process?"
+                            },
+                            {
+                                "prev": "admin_seminar_mem_telemarket",
+                                "id": "admin_seminar_mem_telemarket",
+                                "content": "Do you follow up members with outbound telemarketing calls to generate leads for financial advisers?"
+                            }
+                        ],
+                        "rule": "admin_ongoing_info_session=='Yes'",
+                        "group": [
+                            {
+                                "question": {
+                                    "prev": "admin_seminar_member_contact_method",
+                                    "id": "admin_seminar_member_contact_method",
+                                    "type": "multioption",
+                                    "content": "How are they contacted?",
+                                    "option": [
+                                        {
+                                            "value": "Phone",
+                                            "content": "Phone"
+                                        },
+                                        {
+                                            "value": "Email",
+                                            "content": "Email"
+                                        },
+                                        {
+                                            "value": "SMS",
+                                            "content": "SMS"
+                                        },
+                                        {
+                                            "value": "Letter",
+                                            "content": "Written Correspondence"
+                                        }
+                                    ]
+                                },
+                                "rule": "admin_seminar_member_contact=='Yes'"
+                            },
+                            {
+                                "question": {
+                                    "id": "admin_seminar_online_format",
+                                    "type": "multioption",
+                                    "content": "Are online/webcasts interactive?",
+                                    "option": [
+                                        {
+                                            "value": "interactive",
+                                            "content": "Interactive"
+                                        },
+                                        {
+                                            "value": "prerec",
+                                            "content": "Pre-recorded"
+                                        }
+                                    ]
+                                },
+                                "rule": "admin_seminar_site~~'online'"
+                            },
+                            {
+                                "question": {
+                                    "prev": "admin_seminar_location_other",
+                                    "id": "admin_seminar_location_other",
+                                    "type": "text",
+                                    "content": "Other regional centre"
+                                },
+                                "rule": "admin_seminar_location~~'other'"
+                            },
+                            {
+                                "question": {
+                                    "id": "admin_seminar_feedback_rating",
+                                    "type": "multiline",
+                                    "content": "What does it measure?"
+                                },
+                                "rule": "admin_seminar_feedback=='Yes'"
+                            }
+                        ]
+                    }
+                ]
+            }
+        }
+    ],
+    "label": "Member Communications"
+}
