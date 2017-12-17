@@ -35,11 +35,15 @@
 		</field>
 	</mapping>
 	<mapping>
-		<class-a>xml.source.questionnaire.Question</class-a>
+		<class-a>xml.source.questionnaire.RFIQuestion</class-a>
 		<class-b>xml.dest.questionnaire.Question</class-b>
+		<field custom-converter= "com.baeldung.dozer.MyCustomConvertor">
+			<a>optionList</a>
+			<b>dpId</b>
+		</field>
 		<field>
 			<a>optionList</a>
-			<b>type</b>
+			<b>optionList</b>
 		</field>
 	</mapping>
 	<mapping>

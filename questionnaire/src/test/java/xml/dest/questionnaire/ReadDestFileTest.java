@@ -4,6 +4,7 @@ import static org.junit.Assert.assertEquals;
 
 import java.io.IOException;
 import java.util.Arrays;
+import java.util.List;
 
 import javax.xml.parsers.ParserConfigurationException;
 
@@ -55,10 +56,28 @@ public class ReadDestFileTest {
 	    Root root = getRoot();
 	    Section section = mapper.map(root.getXml(), Section.class);
 	    assertEquals(section.getLabel(), "Member Communications");
+	    enrichPanels( section.getPanel());
 	    SectionHelper sectionHelper = new SectionHelper();
 	    String sectionJson = sectionHelper.sectionToString(section);
 		System.out.println("sectionJson: " + sectionJson);
 
+	}
+
+
+	private void enrichPanels(List<Panel> panels) {
+		if (panels != null) {
+			for ( Panel panel : panels) {	
+				deriveParentId(panel.getQuestions());
+			}
+		}
+	}
+
+	private void deriveParentId(List<Question> questions) {
+		if (questions != null) {
+			for (Question question : questions) {
+				question.setParentId("parent123");
+			}
+		}
 	}
 	
 	@Test

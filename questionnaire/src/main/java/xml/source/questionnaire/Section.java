@@ -8,7 +8,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 public class Section {
 
 	private String label;
-	private List<Question> question;
+	private List<RFIQuestion> question;
 	private Group group;
 
 
@@ -20,11 +20,11 @@ public class Section {
 		this.label = label;
 	}
 
-	public List<Question> getQuestion() {
+	public List<RFIQuestion> getQuestion() {
 		return question;
 	}
 
-	public void setQuestion(List<Question> question) {
+	public void setQuestion(List<RFIQuestion> question) {
 		this.question = question;
 	}
 

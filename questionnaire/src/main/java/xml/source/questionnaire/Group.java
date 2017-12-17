@@ -11,7 +11,7 @@ public class Group {
 	private String rule;
 	
 	@JsonFormat(with = JsonFormat.Feature.ACCEPT_SINGLE_VALUE_AS_ARRAY)
-	private List<Question> question;
+	private List<RFIQuestion> question;
 	
 	@JsonFormat(with = JsonFormat.Feature.ACCEPT_SINGLE_VALUE_AS_ARRAY)
 	private List<Group> group;
@@ -24,11 +24,11 @@ public class Group {
 		this.rule = rule;
 	}
 
-	public List<Question> getQuestion() {
+	public List<RFIQuestion> getQuestion() {
 		return question;
 	}
 
-	public void setQuestion(List<Question> question) {
+	public void setQuestion(List<RFIQuestion> question) {
 		this.question = question;
 	}
 
