@@ -15,6 +15,10 @@ https://www.freeformatter.com/xpath-tester.html
     Element='<section name="core">Spring Core</section>'
     Element='<section name="mvc">Spring MVC</section>'
     Element='<section name="batch">Spring Batch</section>'
+7) //*[@tutId="03"]/parent::*/descendant::title
+8) //*[@tutId="03"]/parent::*/descendant::title[text() !='Android']
+9) //*[@tutId="03"]/parent::*/descendant::title[not(text() ='Android')]
+
 
 ```xml
 <?xml version="1.0"?>
